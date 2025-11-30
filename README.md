@@ -1,39 +1,40 @@
-# CoconutBLT — hybrid Coconut + BLT starter
+# CoconutBLT — a short intro
 
-This workspace is a starter scaffold to design and prototype a hybrid transformer architecture
-combining ideas from Facebook Research's Coconut (continuous latent reasoning) and BLT (byte-latent / patching).
+CoconutBLT is a small research prototype that mixes ideas from Coconut (continuous latent reasoning)
+and BLT (byte-level patching). It's designed for experiments and learning — not a polished production project.
 
-Important licensing note
-- Coconut (MIT) — permissive
-- BLT (CC-BY-NC-4.0) — non-commercial. If you reuse BLT-derived components, you must follow CC-BY-NC-4.0.
+Who this is for
+- Researchers and engineers exploring hybrid transformer ideas.
+- Anyone who wants a compact, runnable starting point (toy training, generation, and tooling).
 
-What is here
-- `ARCHITECTURE.md` — design + parameter budget for a ~1B smol model
-- `src/coconutblt` — minimal, original PyTorch implementation (toy patcher + hybrid transformer)
-- `scripts/train_toy.py` — tiny test training run used to validate the scaffold
-- `scripts/train.py` — a slightly more featureful trainer wired to `configs/model_1b.yaml`
+Quick start (run a tiny test)
 
-Quickstart (toy run)
-
-Install requirements (recommended virtualenv / conda):
+1. Install the Python requirements:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run a short toy training (this uses CPU by default and small toy sizes):
+2. Run a short toy training (CPU friendly):
+
 ```bash
 PYTHONPATH=src python3 scripts/train_toy.py --steps 20 --device cpu
 ```
 
-To try the larger config (simulation only):
+3. Sample from a saved checkpoint:
+
 ```bash
-PYTHONPATH=src python3 scripts/train.py --config configs/model_1b.yaml --device cpu --steps 10 --batch_size 2
+PYTHONPATH=src python3 scripts/generate.py --ckpt checkpoints/final.pt --prompt "Hello" --max_new_tokens 64
 ```
 
-Next steps
-- Implement an entropy-driven patcher inspired by BLT (requires consideration of the license if re-using code)
-- Add tokenizer integration (HF tokenizer or byte-level tokenizer)
-- Add distributed training, FSDP / DeepSpeed recipes for large runs
+Where to look next
+- `docs/USAGE.md` — more detailed examples and scaling notes
+- `ARCHITECTURE.md` — design and parameter budget for a ~1B model
+- `src/coconutblt` — the minimal PyTorch implementation and patcher code
+- `scripts/` — training, generation, and export helpers
 
-# coconutblt
+Licensing notes
+- Some ideas are inspired by Coconut (MIT license).
+- Parts inspired by BLT follow CC-BY-NC-4.0 (non-commercial) — check `blt/README.md` and the license files before reusing BLT-derived code.
+
+That's it — the repo provides a simple playground for research. See `docs/USAGE.md` if you want to run larger experiments.
