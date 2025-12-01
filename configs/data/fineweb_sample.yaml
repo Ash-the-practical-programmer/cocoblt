@@ -1,0 +1,17 @@
+# Data Configuration
+dataset:
+  name: "fineweb-edu-sample"
+  bin_path: "data/fineweb_sample.bin"
+  scores_path: "data/fineweb_scores.h5"
+  seq_len: 2048
+  stride: 2048
+
+entropy:
+  model_path: "checkpoints/entropy_model_50m.pt"
+  target_patch_len: 4.5
+  threshold: 4.0 # calibrated default
+
+loader:
+  batch_size: 32
+  num_workers: 4
+  prefetch_factor: 2
