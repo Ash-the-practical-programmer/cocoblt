@@ -1,6 +1,6 @@
-# CoconutBLT — a short intro
+# CocoBLT — a short intro
 
-CoconutBLT is a small research prototype that mixes ideas from Coconut (continuous latent reasoning)
+CocoBLT is a small research prototype that mixes ideas from Coconut (continuous latent reasoning)
 and BLT (byte-level patching). It's designed for experiments and learning — not a polished production project.
 
 Who this is for
@@ -46,8 +46,8 @@ If you just cloned the repo, here's a short set of commands that usually work on
 
 ```bash
 # clone (if you haven't already)
-git clone https://github.com/InfnityMan/coconutblt.git
-cd coconutblt
+git clone https://github.com/Ash-the-practical-programmer/cocoblt.git
+cd cocoblt
 
 # create a Python virtual environment (recommended)
 python3 -m venv .venv
