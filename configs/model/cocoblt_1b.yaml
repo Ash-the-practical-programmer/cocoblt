@@ -1,0 +1,33 @@
+# CocoBLT 1B Configuration
+model:
+  dim: 2048
+  n_layers: 20
+  n_heads: 16
+  head_dim: 128
+  mlp_ratio: 4.0
+  vocab_size: 256 # Byte-level
+  max_seq_len: 4096 # Max bytes
+  dropout: 0.1
+
+patching:
+  min_patch_size: 1
+  max_patch_size: 8
+  entropy_threshold: 0.5
+  lookahead: 4
+  pad_token_id: 0 # Using 0 as pad for now
+  entropy_model_path: null # Path to pretrained entropy model if available
+
+reasoning:
+  n_latents: 6 # c_thought
+  latent_dim: 2048
+  latent_interval: 4 # Every 4 layers
+  n_heads: 8 # Cross-attention heads
+
+training:
+  batch_size: 4 # Micro batch size
+  grad_accum: 8
+  learning_rate: 3.0e-4
+  weight_decay: 0.1
+  max_steps: 1000
+  warmup_steps: 100
+  mixed_precision: "bf16"
