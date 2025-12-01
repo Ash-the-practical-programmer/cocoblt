@@ -34,8 +34,8 @@ Where to look next
 - `scripts/` — training, generation, and export helpers
 
 Licensing notes
-- Some ideas are inspired by Coconut (MIT license).
-- Parts inspired by BLT follow CC-BY-NC-4.0 (non-commercial) — check `blt/README.md` and the license files before reusing BLT-derived code.
+- Some ideas are inspired by [Coconut](https://github.com/facebookresearch/coconut) (MIT license).
+- Parts inspired by [BLT](https://github.com/facebookresearch/blt) follow CC-BY-NC-4.0 (non-commercial) — check `blt/README.md` and the license files before reusing BLT-derived code.
 
 That's it — the repo provides a simple playground for research. See `docs/USAGE.md` if you want to run larger experiments.
 
